@@ -9,6 +9,9 @@ function fetch_code_two_files() {
 add_action('wp_enqueue_scripts', 'fetch_code_two_files');
 
 function add_codeschool_features() {
+    register_nav_menu('header-menu', 'Header Menu');
+    register_nav_menu('footer-menu-one', 'Footer Menu One');
+    register_nav_menu('footer-menu-two', 'Footer Menu Two');
     add_theme_support( 'title-tag' );
 }
 
