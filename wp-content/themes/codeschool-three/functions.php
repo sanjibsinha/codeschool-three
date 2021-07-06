@@ -17,20 +17,23 @@ function add_codeschool_features() {
 
 add_action( 'after_setup_theme', 'add_codeschool_features' );
 
-function custom_post_types_one() {
+// future post type
+function custom_future_post_types() {
     register_post_type( 'future', array(
         'public' => true,
         'labels' => array(
-            'name' => 'Future Posts',
+            'name' => 'Future Posts',           
 
         ),
-        'menu_icons' => 'dashicons-calendar',
-
-
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
+        'taxonomies'         => array( 'category', 'post_tag' ),
+        'show_in_rest'       => true,
     ));
 }
 
-add_action('init', 'custom_post_types_one');
+/*
+
+add_action('init', 'custom_future_post_types');
 
 function wpdocs_kantbtrue_init() {
     $labels = array(
@@ -74,9 +77,11 @@ function wpdocs_kantbtrue_init() {
         'menu_position'      => 20,
         'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
         'taxonomies'         => array( 'category', 'post_tag' ),
-        'show_in_rest'       => false
+        'show_in_rest'       => true,
     );
       
     register_post_type( 'Recipe', $args );
 }
 add_action( 'init', 'wpdocs_kantbtrue_init' );
+
+*/
