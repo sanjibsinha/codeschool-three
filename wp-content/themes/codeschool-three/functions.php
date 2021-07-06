@@ -25,15 +25,17 @@ function custom_future_post_types() {
             'name' => 'Future Posts',           
 
         ),
-        'supports'           => array( 'title', 'editor', 'author', 'thumbnail' ),
+        'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
         'taxonomies'         => array( 'category', 'post_tag' ),
-        'show_in_rest'       => true,
+        'show_in_rest'       => false,
     ));
 }
 
-/*
-
 add_action('init', 'custom_future_post_types');
+
+
+
+/*
 
 function wpdocs_kantbtrue_init() {
     $labels = array(
